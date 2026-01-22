@@ -52,9 +52,6 @@ class Slideshow:
         # Bind the Escape key to exit fullscreen mode
         self.root.bind("<Escape>", lambda event: self.exit_fullscreen())
 
-        # Ensure the slideshow window is in focus
-        # self.root.focus_set()
-
         # Start the slideshow by showing the first image
         self.show_image(self.current_index)
         self.schedule_next_image()
@@ -69,7 +66,6 @@ class Slideshow:
                 "Enter the time (in seconds) for each slide:",
                 minvalue=1,
                 maxvalue=60,
-                # parent=self.root,  # Attach dialog to slideshow window
                 parent=self.parent,  # Attach dialog to slideshow window
             )
             self.root.deiconify()  # Restore the main window
@@ -168,6 +164,7 @@ class ImageViewerApp:
         # Bind keyboard shortcuts for navigation
         self.root.bind("<Left>", lambda event: self.show_previous_image())  # Left arrow
         self.root.bind("<Right>", lambda event: self.show_next_image())  # Right arrow
+        self.root.bind("<Escape>", lambda event: self.show_first_image())  # Right arrow
 
     def set_window_icon(self):
         """Set the window icon using an embedded base64 string."""
@@ -180,7 +177,6 @@ class ImageViewerApp:
             # Convert the binary data into an Image object
             icon_image = Image.open(BytesIO(icon_data))
             icon_image = ImageTk.PhotoImage(icon_image)
-            # icon_image = PhotoImage(file='camera.png')
 
             # Set the window icon
             self.root.iconphoto(True, icon_image)
