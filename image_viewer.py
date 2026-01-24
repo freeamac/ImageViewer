@@ -299,7 +299,7 @@ class ImageViewerApp:
         """ Read the collection information and return a list of immage information objects. """
         image_paths = []
         try:
-            with open(self.collection_path, 'r') as fp:
+            with open(self.collection_path, 'r', encoding="utf-8") as fp:
                 xml_content = fp.read()
                 root = ET.fromstring(xml_content)
                 self.collection_name = root.find('title').text
