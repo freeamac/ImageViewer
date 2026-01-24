@@ -33,3 +33,13 @@ In manual display mode, the following key bindings are available:
 | \<Left\> | Go To Previous Image |
 | \<Right\> | Go To Next Image |
 | \<Escape\> | Go To First Image |
+
+## Creating Standalone Executable
+
+Use [PyInstaller](https://pyinstaller.org/en/stable/) as follows in Powershell to create a standalone Windows executable:
+
+```
+pyinstaller ImageViewer.spec
+```
+
+and the standalone executable will be found in the *dist* folder.
