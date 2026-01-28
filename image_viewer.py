@@ -93,7 +93,7 @@ class Slideshow:
             self.image_area.config(image=self.current_image)
 
             # Get image metadata information
-            self.caption_text_label.config(text=self.images[index].image_cpation)
+            self.caption_text_label.config(text=self.images[index].image_caption)
             self.date_label.config(text=self.images[index].image_date)
             if self.images[index].image_asa is not None:
                 self.asa_label.config(text=f"ASA: {self.images[index].image_asa}")
@@ -131,11 +131,11 @@ class Slideshow:
 
 @dataclass
 class ImageInfo:
-    def __init__(self, image_path, image_date, image_location, image_cpation, image_asa=None, roll_number=None, roll_max=None):
+    def __init__(self, image_path, image_date, image_location, image_caption, image_asa=None, roll_number=None, roll_max=None):
         self.image_path = image_path
         self.image_date = image_date
         self.image_location = image_location
-        self.image_cpation = image_cpation
+        self.image_caption = image_caption
         self.image_asa = image_asa
         self.roll_number = roll_number
         self.roll_max = roll_max
@@ -308,7 +308,7 @@ class ImageViewerApp:
                         image_path=collection_path / Path(image.find('image').text),
                         image_date=image.find('date').text,
                         image_location=image.find('location').text,
-                        image_cpation=image.find('caption').text,
+                        image_caption=image.find('caption').text,
                         image_asa=image.find('asa').text if image.find('asa') is not None else None,
                         roll_number=image.find('roll_num').text if image.find('roll_num') is not None else None,
                         roll_max=image.find('roll_max').text if image.find('roll_max') is not None else None,
@@ -370,7 +370,7 @@ class ImageViewerApp:
             self.image_area.config(image=self.current_image, text="")
 
             # Get image metadata information
-            self.caption_text_label.config(text=self.collection_images[index].image_cpation)
+            self.caption_text_label.config(text=self.collection_images[index].image_caption)
             self.date_label.config(text=self.collection_images[index].image_date)
             if self.collection_images[index].image_asa is not None:
                 self.asa_label.config(text=f"ASA: {self.collection_images[index].image_asa}")
