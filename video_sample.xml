@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="videoshow.xsl"?>
+<!DOCTYPE videoshow SYSTEM "videoshow.dtd">
+<videoshow>
+  <title>Ireland Trip Videos</title>
+  <copyright>Copyright 2025 by amac</copyright>
+  <video>
+    <source>ireland/ireland.mp4</source>
+    <caption>The rushing River Gaddagh.</caption>
+    <date>September 17th, 2025</date>
+    <location>County Kerry, Ireland</location>
+  </video>
+  <video>
+    <source>ireland/nexussample.mp4</source>
+    <caption>Tomomi taking a walk on the beach.</caption>
+  </video>
+</videoshow>
