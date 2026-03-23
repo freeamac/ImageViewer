@@ -1,4 +1,5 @@
 altgraph==0.17.5
+beautifulsoup4==4.14.3
 click==8.3.1
 ffpyplayer==4.5.3
 numpy==2.2.6
@@ -9,3 +10,5 @@ pkgconfig==1.5.5
 pyinstaller==6.18.0
 pyinstaller-hooks-contrib==2025.11
 setuptools==82.0.1
+soupsieve==2.8.3
+typing_extensions==4.15.0
